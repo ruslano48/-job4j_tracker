@@ -42,10 +42,10 @@ public class TriangleTest {
     public void whenCollinearPointsThenAreaIsMinusOne() {
         Point a = new Point(0, 0);
         Point b = new Point(1, 1);
-        Point c = new Point(2, 2); // Все точки лежат на одной прямой
+        Point c = new Point(2, 2);
         Triangle triangle = new Triangle(a, b, c);
         double result = triangle.area();
-        double expected = -1; // Треугольник не существует
+        double expected = -1;
         assertThat(result).isCloseTo(expected, offset(0.001));
     }
 }
