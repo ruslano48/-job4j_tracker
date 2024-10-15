@@ -19,11 +19,22 @@ public class Triangle {
         return ab + ac > bc && ab + bc > ac && ac + bc > ab;
     }
 
+    public double area() {
+        double ab = first.distance(second);
+        double ac = first.distance(third);
+        double bc = second.distance(third);
+        if (this.exist(ab, ac, bc)) {
+            double p = semiPerimeter(ab, ac, bc);
+            return Math.sqrt(p * (p - ab) * (p - ac) * (p - bc));
+        }
+        return -1;
+    }
+
     public static void main(String[] args) {
         Point a = new Point(0, 0);
         Point b = new Point(0, 2);
         Point c = new Point(2, 0);
         Triangle triangle = new Triangle(a, b, c);
+        System.out.println("Area: " + triangle.area());
     }
 }
-
