@@ -1,7 +1,7 @@
 package ru.job4j.encapsulation;
 
 public class Config {
-    String name;
+    private String name;
     private int position;
     public String[] properties;
 
@@ -13,7 +13,7 @@ public class Config {
         System.out.println(position);
     }
 
-    public String getProperty(String key) {
+    private String getProperty(String key) {
         return search(key);
     }
 
