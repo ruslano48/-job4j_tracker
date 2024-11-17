@@ -13,7 +13,7 @@ public class Library {
         books[2] = book3;
         books[3] = book4;
 
-        System.out.println("System.lineSeparator()Первоначальный список книг:");
+        System.out.println("Первоначальный список книг:");
         for (int i = 0; i < books.length; i++) {
             System.out.println(books[i].getName() + " - " + books[i].getPages() + " страниц");
         }
@@ -22,12 +22,12 @@ public class Library {
         books[0] = books[3];
         books[3] = temp;
 
-        System.out.println("System.lineSeparator()Список книг после перестановки:");
+        System.out.println("Список книг после перестановки:");
         for (int i = 0; i < books.length; i++) {
             System.out.println(books[i].getName() + " - " + books[i].getPages() + " страниц");
         }
 
-        System.out.println("System.lineSeparator()Книга с названием 'Clean Code':");
+        System.out.println("Книга с названием 'Clean Code':");
         for (int i = 0; i < books.length; i++) {
             if ("Clean Code".equals(books[i].getName())) {
                 System.out.println(books[i].getName() + " - " + books[i].getPages() + " страниц");
