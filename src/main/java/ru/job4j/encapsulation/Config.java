@@ -26,10 +26,16 @@ public class Config {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
         Config config = (Config) o;
-        return position == config.position && Objects.equals(name, config.name) && Objects.deepEquals(properties, config.properties);
+        return position == config.position
+                && Objects.equals(name, config.name)
+                && Objects.deepEquals(properties, config.properties);
     }
 
     @Override
