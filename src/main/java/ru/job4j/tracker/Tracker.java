@@ -37,8 +37,6 @@ public class Tracker {
                 temp[count++] = items[i];
             }
         }
-        Item[] result = new Item[count];
-        System.arraycopy(temp, 0, result, 0, count);
-        return result;
+        return Arrays.copyOf(temp, count);
     }
 }
