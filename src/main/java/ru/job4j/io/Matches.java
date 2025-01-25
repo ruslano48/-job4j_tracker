@@ -19,7 +19,7 @@ public class Matches {
             int matches = Integer.parseInt(input.nextLine().trim());
             if (matches < 1 || matches > 3) {
                 System.out.println("Ошибка!");
-                continue;
+                break;
 
             }
             turn = !turn;
