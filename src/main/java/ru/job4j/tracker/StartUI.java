@@ -8,7 +8,7 @@ public class StartUI {
         boolean run = true;
         while (run) {
             showMenu();
-            System.out.println("Выбрать: ");
+            System.out.print("Выбрать: ");
         int select = Integer.parseInt(scanner.nextLine());
         if (select != 6) {
             System.out.println("Пользователь выбрал: " + select);
@@ -42,4 +42,5 @@ public class StartUI {
         Tracker tracker = new Tracker();
         new StartUI().init(scanner, tracker);
     }
+
 }
