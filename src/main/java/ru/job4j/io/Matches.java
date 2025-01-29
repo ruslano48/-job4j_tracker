@@ -19,14 +19,14 @@ public class Matches {
             int matches = Integer.parseInt(input.nextLine().trim());
             if (matches < 1 || matches > 3) {
                 System.out.println("Ошибка!");
-                break;
+            } else {
 
-            }
-            turn = !turn;
-            count = count - matches;
-            if (count == 1) {
-                System.out.println("Игрок выиграл" + player);
-                break;
+                turn = !turn;
+                count = count - matches;
+                if (count == 1) {
+                    System.out.println("Игрок выиграл" + player);
+                    break;
+                }
             }
         }
     }
