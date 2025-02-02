@@ -46,7 +46,7 @@ public class StartUI {
 
             } else if (select == 4) {
                 System.out.println("=== Вывод заявки по id: ");
-                System.out.println("Введите id: ");
+                System.out.print("Введите id: ");
                 int id = Integer.parseInt(scanner.nextLine());
                 Item item = tracker.findById(id);
                 if (item != null) {
