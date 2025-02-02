@@ -38,7 +38,7 @@ public class StartUI {
                 System.out.println("Заявка изменена успешно");
             } else if (select == 3) {
                 System.out.println("=== Удаление заявки  ===");
-                System.out.println("Введите id: ");
+                System.out.print("Введите id: ");
                 int id = Integer.parseInt(scanner.nextLine());
                 Item item = tracker.findById(id);
                 tracker.delete(id);
