@@ -10,7 +10,7 @@ public class ExitAction implements UserAction {
 
     @Override
     public String name() {
-        return "ExitAction";
+        return "Завершить программу";
     }
 
     @Override
