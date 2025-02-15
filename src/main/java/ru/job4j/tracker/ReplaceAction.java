@@ -1,6 +1,14 @@
 package ru.job4j.tracker;
 
 public class ReplaceAction implements UserAction {
+
+    private final Output output;
+
+    public ReplaceAction(Output output) {
+
+        this.output = output;
+    }
+
     @Override
     public String name() {
         return "Изменить заявку";
@@ -8,15 +16,15 @@ public class ReplaceAction implements UserAction {
 
     @Override
     public boolean execute(Input input, Tracker tracker) {
-        System.out.println("=== Edit item ===");
+        output.println("=== Edit item ===");
         int id = input.askInt("Enter id: ");
         String name = input.askStr("Enter new name: ");
         Item item = new Item(name);
 
         if (tracker.replace(id, item)) {
-            System.out.println("Заявка успешно изменена.");
+            output.println("Заявка успешно изменена.");
         } else {
-            System.out.println("Ошибка: заявка с указанным ID не найдена.");
+            output.println("Ошибка: заявка с указанным ID не найдена.");
         }
 
         return true;
