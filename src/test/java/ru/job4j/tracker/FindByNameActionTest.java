@@ -37,5 +37,4 @@ class FindByNameActionTest {
                         + "=== Завершение программы ===" + ln
         );
     }
-
 }
