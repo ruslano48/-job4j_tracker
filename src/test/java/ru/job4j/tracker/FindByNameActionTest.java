@@ -11,8 +11,7 @@ class FindByNameActionTest {
         Output output = new StubOutput();
         Tracker tracker = new Tracker();
         Item one = tracker.add(new Item("test1"));
-        Item two = tracker.add(new Item("test1")); // Добавляем несколько заявок с одинаковым именем
-
+        Item two = tracker.add(new Item("test1"));
         Input input = new MockInput(
                 new String[]{"0", "test1", "1"}
         );
