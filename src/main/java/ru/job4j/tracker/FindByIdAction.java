@@ -11,7 +11,7 @@ public class FindByIdAction implements UserAction {
 
     @Override
     public String name() {
-        return "Показать заявку по id";
+        return "Вывод заявки по id";
     }
 
     @Override
@@ -20,7 +20,7 @@ public class FindByIdAction implements UserAction {
         int id = input.askInt("Введите id: ");
         Item item = tracker.findById(id);
         if (item != null) {
-            System.out.println(item);
+          output.println(item);
         } else {
           output.println("Заявка с введенным id: " + id + " не найдена.");
 

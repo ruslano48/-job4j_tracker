@@ -16,11 +16,11 @@ public class FindAllAction implements UserAction {
 
     @Override
     public boolean execute(Input input, Tracker tracker) {
-        output.println("=== Вывод всех заявок ===");
+        output.println("=== Показать все заявки ===");
         Item[] items = tracker.findAll();
         if (items.length > 0) {
             for (Item item : items) {
-                System.out.println(item);
+                output.println(item);
             }
         } else {
             output.println("Хранилище еще не содержит заявок");
