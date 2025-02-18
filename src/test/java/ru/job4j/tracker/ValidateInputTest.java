@@ -45,7 +45,7 @@ class ValidateInputTest {
     }
 
     @Test
-    void whenNegativeNumberInput () {
+    void whenNegativeNumberInput() {
       Output output = new StubOutput();
       Input in = new MockInput(
               new String[]{"-5"}
