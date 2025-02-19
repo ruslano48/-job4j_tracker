@@ -40,7 +40,7 @@ class PasswordValidatorTest {
         assertThat(exception.getMessage()).isEqualTo(expected);
     }
 
-@Disabled
+    @Disabled
     @Test
     void whenPasswordLengthMore32() {
         String password = "Ln2$mrTY3245nMdsdfdfPPPg$#dg124531";
@@ -64,7 +64,7 @@ class PasswordValidatorTest {
         assertThat(exception.getMessage()).isEqualTo(expected);
     }
 
-   @Disabled
+    @Disabled
     @Test
     void whenPasswordNotContainLowerCaseLetter() {
         String password = "LN2$MRTY12";
@@ -136,7 +136,7 @@ class PasswordValidatorTest {
         assertThat(exception.getMessage()).isEqualTo(expected);
     }
 
-   @Disabled
+    @Disabled
     @Test
     void whenPasswordContainSubstringAdmin() {
         String password = "Ln2$aDmiNrTY12";
