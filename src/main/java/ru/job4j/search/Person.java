@@ -8,10 +8,10 @@ public class Person {
 
     public Person(String name, String surname, String phone, String address) {
 
-     this.name = name;
-     this.surname = surname;
-     this.phone = phone;
-     this.address = address;
+        this.name = name;
+        this.surname = surname;
+        this.phone = phone;
+        this.address = address;
     }
 
     public String getName() {
@@ -23,11 +23,11 @@ public class Person {
     }
 
     public String getPhone() {
-    return phone;
+        return phone;
 
     }
 
     public String getAddress() {
-    return address;
+        return address;
     }
 }
