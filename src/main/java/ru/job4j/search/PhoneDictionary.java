@@ -10,24 +10,15 @@ public class PhoneDictionary {
     }
 
     public ArrayList<Person> find(String key) {
-       ArrayList<Person> result = new ArrayList<>();
+        ArrayList<Person> result = new ArrayList<>();
 
-       for (Person person: persons) {
-           if (person.getName().contains(key)) {
-               result.add(person);
-           }
-           if (person.getSurname().contains(key)) {
-               result.add(person);
-           }
-           if (person.getPhone().contains(key)) {
-               result.add(person);
-           }
-           if (person.getAddress().contains(key)) {
-               result.add(person);
-           }
+        for (Person person : persons) {
+            if (person.getName().contains(key) || person.getSurname().contains(key) || person.getPhone().contains(key) || person.getAddress().contains(key)) {
+                result.add(person);
+            }
 
-       }
+        }
 
-       return result;
+        return result;
     }
 }
