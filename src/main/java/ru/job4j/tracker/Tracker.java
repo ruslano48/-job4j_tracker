@@ -14,7 +14,6 @@ public class Tracker {
     }
 
     public Item findById(int id) {
-
         for (Item item : items) {
             if (item.getId() == id) {
                 return item;
