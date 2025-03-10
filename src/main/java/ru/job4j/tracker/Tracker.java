@@ -36,6 +36,17 @@ public class Tracker {
         return result;
     }
 
+    private int indexOf(int id) {
+        int result = -1;
+        for (int index = 0; index < items.size(); index++) {
+            if (items.get(index).getId() == id) {
+                result = index;
+                break;
+            }
+        }
+        return result;
+    }
+
     public boolean replace(int id, Item item) {
         for (int i = 0; i < items.size(); i++) {
             if (items.get(i).getId() == id) {
