@@ -10,10 +10,15 @@ public class Task {
     }
 
     String getDescription() {
-    return description;
+        return description;
     }
 
     int getPriority() {
         return priority;
+    }
+
+    public String getNumber() {
+
+        return getNumber();
     }
 }
