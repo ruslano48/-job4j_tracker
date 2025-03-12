@@ -1,8 +1,6 @@
 package ru.job4j.search;
 
 import org.junit.jupiter.api.Test;
-import ru.job4j.collection.Task;
-
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class PriorityQueueTest {

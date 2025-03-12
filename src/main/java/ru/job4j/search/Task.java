@@ -1,12 +1,14 @@
-package ru.job4j.collection;
+package ru.job4j.search;
 
 public class Task {
     private String description;
     private int priority;
+    private String number;
 
     public Task(String description, int priority) {
         this.description = description;
         this.priority = priority;
+        this.number = number;
     }
 
   public   String getDescription() {
@@ -19,6 +21,6 @@ public class Task {
 
     public String getNumber() {
 
-        return getNumber();
+        return number;
     }
 }
