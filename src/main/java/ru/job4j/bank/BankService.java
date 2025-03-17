@@ -14,8 +14,8 @@ public class BankService {
     }
 
     public void deleteUser(String passport) {
-        User user = new User(passport, "Name");
-        users.remove(user);
+        users.remove(new User(passport, ""));
+
     }
 
     public void addAccount(String passport, Account account) {
@@ -23,12 +23,10 @@ public class BankService {
         if (foundUser != null) {
             List<Account> accounts = users.get(foundUser);
 
-            for (Account acc : accounts) {
-                if (acc.getRequisite().equals(account.getRequisite())) {
-                    return;
-                }
+            if (!accounts.contains(account)) {
+
+                accounts.add(account);
             }
-            accounts.add(account);
         }
     }
 
