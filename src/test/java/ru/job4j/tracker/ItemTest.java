@@ -11,36 +11,27 @@ class ItemSortTest {
 
     @Test
     void whenSortByNameAsc() {
-        List<Item> items = Arrays.asList(
-                new Item(1, "Charlie"),
-                new Item(2, "Alpha"),
-                new Item(3, "Bravo")
-        );
+        LocalDateTime fixedTime = LocalDateTime.now();
+        Item charlie = new Item(1, "Charlie", fixedTime);
+        Item alpha = new Item(2, "Alpha", fixedTime);
+        Item bravo = new Item(3, "Bravo", fixedTime);
 
-        List<Item> expected = Arrays.asList(
-                new Item(2, "Alpha"),
-                new Item(3, "Bravo"),
-                new Item(1, "Charlie")
-        );
+        List<Item> items = Arrays.asList(charlie, alpha, bravo);
+        List<Item> expected = Arrays.asList(alpha, bravo, charlie);
 
         Collections.sort(items, new ItemAscByName());
-        assertEquals(expected.toString(), items.toString());
+        assertEquals(expected, items);
     }
 
     @Test
     void whenSortByNameDesc() {
         LocalDateTime fixedTime = LocalDateTime.now();
-        List<Item> items = Arrays.asList(
-                new Item(1, "Charlie"),
-                new Item(2, "Alpha"),
-                new Item(3, "Bravo")
-        );
+        Item charlie = new Item(1, "Charlie", fixedTime);
+        Item alpha = new Item(2, "Alpha", fixedTime);
+        Item bravo = new Item(3, "Bravo", fixedTime);
 
-        List<Item> expected = Arrays.asList(
-                new Item(1, "Charlie"),
-                new Item(3, "Bravo"),
-                new Item(2, "Alpha")
-        );
+        List<Item> items = Arrays.asList(charlie, alpha, bravo);
+        List<Item> expected = Arrays.asList(charlie, bravo, alpha);
 
         Collections.sort(items, new ItemDescByName());
         assertEquals(expected, items);
