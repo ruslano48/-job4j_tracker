@@ -21,6 +21,5 @@ public class JobSorter {
                 .thenComparing(new JobDescByName())
                 .thenComparing(new JobDescByPriority());
         Collections.sort(jobs, combine);
-
     }
 }
