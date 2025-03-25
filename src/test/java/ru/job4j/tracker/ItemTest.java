@@ -1,5 +1,7 @@
 package ru.job4j.tracker;
 import org.junit.jupiter.api.Test;
+
+import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -27,6 +29,7 @@ class ItemSortTest {
 
     @Test
     void whenSortByNameDesc() {
+        LocalDateTime fixedTime = LocalDateTime.now();
         List<Item> items = Arrays.asList(
                 new Item(1, "Charlie"),
                 new Item(2, "Alpha"),
@@ -40,6 +43,6 @@ class ItemSortTest {
         );
 
         Collections.sort(items, new ItemDescByName());
-        assertEquals(expected.toString(), items.toString());
+        assertEquals(expected, items);
     }
 }
