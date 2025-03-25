@@ -39,4 +39,3 @@ public class User implements Comparable<User> {
         return Objects.hash(age, name);
     }
 }
-
