@@ -15,6 +15,7 @@ class JobTest {
                 new Job("Analyst", 3),
                 new Job("Manager", 1)
         ));
+        
         jobs.sort(new Job.JobNameComparator());
         assertEquals("Analyst", jobs.get(0).getName());
         assertEquals("Developer", jobs.get(1).getName());
