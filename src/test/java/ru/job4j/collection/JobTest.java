@@ -15,7 +15,7 @@ class JobTest {
                 new Job("Analyst", 3),
                 new Job("Manager", 1)
         ));
-        
+
         jobs.sort(new Job.JobNameComparator());
         assertEquals("Analyst", jobs.get(0).getName());
         assertEquals("Developer", jobs.get(1).getName());
@@ -90,5 +90,49 @@ class JobTest {
         assertEquals("Analyst", jobs.get(1).getName());
         assertEquals(2, jobs.get(2).getPriority());
         assertEquals("Developer", jobs.get(2).getName());
+    }
+
+    @Test
+    void whenSortByNameAscendingWithExpectedList() {
+        List<Job> jobs = new ArrayList<>(List.of(
+                new Job("Developer", 2),
+                new Job("Analyst", 3),
+                new Job("Manager", 1)
+        ));
+
+        List<Job> expected = new ArrayList<>(List.of(
+                new Job("Analyst", 3),
+                new Job("Developer", 2),
+                new Job("Manager", 1)
+        ));
+
+        jobs.sort(new Job.JobNameComparator());
+
+        for (int i = 0; i < jobs.size(); i++) {
+            assertEquals(expected.get(i).getName(), jobs.get(i).getName());
+            assertEquals(expected.get(i).getPriority(), jobs.get(i).getPriority());
+        }
+    }
+
+    @Test
+    void whenSortByPriorityDescendingWithExpectedList() {
+        List<Job> jobs = new ArrayList<>(List.of(
+                new Job("Developer", 2),
+                new Job("Analyst", 3),
+                new Job("Manager", 1)
+        ));
+
+        List<Job> expected = new ArrayList<>(List.of(
+                new Job("Analyst", 3),
+                new Job("Developer", 2),
+                new Job("Manager", 1)
+        ));
+
+        jobs.sort(new Job.JobPriorityDescComparator());
+
+        for (int i = 0; i < jobs.size(); i++) {
+            assertEquals(expected.get(i).getName(), jobs.get(i).getName());
+            assertEquals(expected.get(i).getPriority(), jobs.get(i).getPriority());
+        }
     }
 }
