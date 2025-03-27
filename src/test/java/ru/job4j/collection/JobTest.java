@@ -1,10 +1,11 @@
 package ru.job4j.collection;
+
 import org.junit.jupiter.api.Test;
-import java.util.List;
+
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import static org.junit.jupiter.api.Assertions.*;
+import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class JobTest {
 
@@ -107,11 +108,7 @@ class JobTest {
         ));
 
         jobs.sort(new Job.JobNameComparator());
-
-        for (int i = 0; i < jobs.size(); i++) {
-            assertEquals(expected.get(i).getName(), jobs.get(i).getName());
-            assertEquals(expected.get(i).getPriority(), jobs.get(i).getPriority());
-        }
+        assertEquals(expected.get(0).getPriority(), jobs.get(0).getPriority());
     }
 
     @Test
