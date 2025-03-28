@@ -5,18 +5,41 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Класс реализует сервис для управления пользователями и их банковскими счетами.
+ * Он позволяет добавлять, удалять пользователей, а также осуществлять переводы между счетами.
+ *
+ * @author RUSLAN OSTAPENKO
+ * @version 1.0
+ */
 public class BankService {
+    /**
+     * Хранение пользователей банка и их счетов,
+     * где ключ-пользователь, значение - список его счетов.
+     */
     private final Map<User, List<Account>> users = new HashMap<>();
 
+    /**
+     * Добавляет нового пользователя в банковскую систему.
+     * Если пользователь уже существует, то он не будет добавлен повторно.
+     */
     public void addUser(User user) {
         users.put(user, new ArrayList<>());
 
     }
 
+    /**
+     * Удаляет пользователя по его паспорту
+     */
+
     public void deleteUser(String passport) {
         users.remove(new User(passport, ""));
 
     }
+
+    /**
+     * Добавляет новый банковский счет пользователя по его паспорту
+     */
 
     public void addAccount(String passport, Account account) {
         User foundUser = findByPassport(passport);
@@ -30,6 +53,10 @@ public class BankService {
         }
     }
 
+    /**
+     * Поиск пользователя по паспорту
+     */
+
     public User findByPassport(String passport) {
 
         for (User userMap : users.keySet()) {
@@ -41,6 +68,10 @@ public class BankService {
 
         return null;
     }
+
+    /**
+     * Ищет пользователя по банковскому счету и паспорту
+     */
 
     public Account findByRequisite(String passport, String requisite) {
         User foundUser = findByPassport(passport);
@@ -54,6 +85,10 @@ public class BankService {
         }
         return null;
     }
+
+    /**
+     * Осуществляет перевод денег
+     */
 
     public boolean transferMoney(String sourcePassport, String sourceRequisite,
                                  String destinationPassport, String destinationRequisite,
@@ -69,6 +104,10 @@ public class BankService {
         }
         return false;
     }
+
+    /**
+     * Получает список счетов пользователя
+     */
 
     public List<Account> getAccounts(User user) {
         return users.get(user);
