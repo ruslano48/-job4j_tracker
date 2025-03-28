@@ -108,7 +108,7 @@ class JobTest {
         ));
 
         jobs.sort(new Job.JobNameComparator());
-        assertEquals(expected.get(0).getPriority(), jobs.get(0).getPriority());
+        assertEquals(jobs, expected);
     }
 
     @Test
@@ -127,9 +127,6 @@ class JobTest {
 
         jobs.sort(new Job.JobPriorityDescComparator());
 
-        for (int i = 0; i < jobs.size(); i++) {
-            assertEquals(expected.get(i).getName(), jobs.get(i).getName());
-            assertEquals(expected.get(i).getPriority(), jobs.get(i).getPriority());
+            assertEquals(jobs, expected);
         }
     }
-}
