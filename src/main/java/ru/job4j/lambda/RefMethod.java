@@ -12,7 +12,7 @@ public class RefMethod {
                 "Petr Arsentev"
         );
 
-        names.forEach(RefMethod :: cutOut);
+        names.forEach(RefMethod::cutOut);
     }
 
     public static void cutOut(String value) {
