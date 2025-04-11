@@ -4,12 +4,12 @@ import java.util.Objects;
 
 public class Student {
     private int score;
+
     private String surname;
 
     public Student(int score, String surname) {
         this.score = score;
         this.surname = surname;
-
     }
 
     public int getScore() {
@@ -21,7 +21,6 @@ public class Student {
     }
 
     @Override
-
     public boolean equals(Object o) {
         if (this == o) {
             return true;
@@ -29,7 +28,6 @@ public class Student {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-
         Student student = (Student) o;
         return score == student.score
                 && Objects.equals(surname, student.surname);
