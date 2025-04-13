@@ -14,12 +14,17 @@ public class Card {
         this.value = value;
     }
 
+    @Override
+    public String toString() {
+        return value + " of " + suit;
+    }
+
     public static void main(String[] args) {
         List<Card> deck = Stream.of(Suit.values())
                 .flatMap(suit -> Stream.of(Value.values())
                         .map(value -> new Card(suit, value)))
                 .collect(Collectors.toList());
 
-        deck.forEach(card -> System.out.println(card));
+        deck.forEach(System.out::println);
     }
 }
